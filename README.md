@@ -50,7 +50,7 @@ docker run -dti \
    -p 1.2.3.4:80:8001 \
    -v /path/to/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf:/etc/apache2/modsecurity.d/owasp-crs/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf \
    -v /path/to/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf:/etc/apache2/modsecurity.d/owasp-crs/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf \
-   franbuehler/modsecurity-crs-rp:v3.1
+   angeloxx/modsecurity-crs-rp:v3.1
 ```
   
   
@@ -61,7 +61,7 @@ This example can be helpful when no volume mounts are possible (some CI pipeline
 ```
 docker create -ti --name apachecrsrp \
    -p 1.2.3.4:80:8001 \
-   franbuehler/modsecurity-crs-rp:v3.1
+   angeloxx/modsecurity-crs-rp:v3.1
   
 docker cp /path/to/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf \
    apachecrsrp:/etc/apache2/modsecurity.d/owasp-crs/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
@@ -98,7 +98,7 @@ docker run -dti --name apachecrsrp -p 0.0.0.0:80:8001 \
    -e COMBINED_FILE_SIZES=1000000 \
    -e BACKEND=http://192.168.192.57:8000 \
    -e PORT=8001 \
-   franbuehler/modsecurity-crs-rp
+   angeloxx/modsecurity-crs-rp
 ```
   
   
@@ -112,7 +112,7 @@ docker run -dt --name apachecrsrp \
    -e BACKEND=http://172.17.0.1:8000 \
    -e PORT=8001 
    --expose 8001 
-   franbuehler/modsecurity-crs-rp
+   angeloxx/modsecurity-crs-rp
 ```
   
   
@@ -132,7 +132,7 @@ docker run -dti --name apachecrsrp \
    -e MAX_FILE_SIZE=1048576 \
    -e COMBINED_FILESIZES=1048576 \
    -e BACKEND=http://192.168.192.57:8000 \
-   -e PORT=8080 franbuehler/modsecurity-crs-rp
+   -e PORT=8080 angeloxx/modsecurity-crs-rp
 ```
   
     
@@ -141,5 +141,5 @@ docker run -dti --name apachecrsrp \
 
 ##### docker-compose.yaml for easier use
 
-See: https://github.com/franbuehler/modsecurity-crs-rp/blob/v3.1/docker-compose.yaml
+See: https://github.com/angeloxx/modsecurity-crs-rp/blob/v3.1/docker-compose.yaml
   
